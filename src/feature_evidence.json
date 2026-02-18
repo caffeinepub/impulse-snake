@@ -1,0 +1,23 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-fix-the-player-name-input-on-the-start-screen-so-users-can-type-normally-and-all-characters-are-accepted-specifically-including-x-c-v-b-n-and-m-without-any-global-game-keyboard-handler-interfering-while-the-input-is-focused",
+      "featureTitle": "Fix the Player Name input on the start screen so users can type normally and all characters are accepted (specifically including X, C, V, B, N, and M), without any global game keyboard handler interfering while the input is focused.",
+      "files": [
+        "frontend/src/pages/SnakeGamePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-17"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

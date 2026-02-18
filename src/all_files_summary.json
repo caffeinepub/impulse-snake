@@ -1,0 +1,20 @@
+{
+  "backend/main.mo": "Empty Motoko actor placeholder with no logic.",
+  "feature_evidence.json": "Feature evidence report linking the player name input fix to SnakeGamePage.tsx and related components.",
+  "frontend-file-summaries.txt": "Prewritten summaries describing various frontend files, their styles, configs, and game logic roles.",
+  "frontend/index.css": "Tailwind base layer defining theme CSS variables, dark mode variants, and global border/background styles.",
+  "frontend/index.html": "Basic HTML shell loading the React app root and main entry script.",
+  "frontend/src/App.tsx": "Root React component that renders the SnakeGamePage.",
+  "frontend/src/components/ControlLegend.tsx": "UI component showing keyboard controls with icons and labels.",
+  "frontend/src/components/HudBar.tsx": "HUD bar displaying player name and score with stable layout and icons.",
+  "frontend/src/game/SnakeCanvas.tsx": "Responsive canvas renderer that draws the snake game using DPI-aware rendering and dynamic sizing.",
+  "frontend/src/game/useImpulseSnake.ts": "React hook implementing core Snake game state, movement, collision logic, and animation loop management.",
+  "frontend/src/hooks/useActor.ts": "React hook that creates and manages a Dfinity backend actor based on Internet Identity state.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Context and hooks for managing Internet Identity login, stored identities, and auth client lifecycle.",
+  "frontend/src/index.css": "Defines Tailwind layers, theme CSS variables for light/dark modes, and custom utilities for grid background and responsive playfield layout.",
+  "frontend/src/main.tsx": "Bootstraps the React app, providing React Query and Internet Identity context, and loads global styles.",
+  "frontend/src/pages/SnakeGamePage.tsx": "Implements the main Snake game page with keyboard controls, start logic, HUD, and playfield rendering.",
+  "frontend/src/utils/isTextEditingElement.ts": "Utility to detect if an element is a text‑editable input to avoid intercepting typing during gameplay.",
+  "frontend/tailwind.config.js": "Configures Tailwind theme, colors mapped to CSS variables, fonts, animations, and plugins.",
+  "project_state.json": "Stores project metadata, known issues, and implemented features for the Snake game build."
+}

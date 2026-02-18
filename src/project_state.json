@@ -1,0 +1,169 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 15,
+  "summary": "Build a simple impulse-style Snake web game with WASD movement, Space to start, and a start screen showing controls for new players.",
+  "architectural_notes": [],
+  "known_issues": [
+    "Gameplay/play screen appears too small; needs larger/responsive sizing.",
+    "Scoreboard/HUD at the upper side has a bug (positioning/display issue); needs fixing.",
+    "Player name entry/display has an issue: typing/spelling/editing the name is not working correctly.",
+    "Player name input/spelling does not accept certain letters (e.g., X/C/V/B/N/M); needs fixing so all characters can be typed normally."
+  ],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-implement-an-impulse-style-snake-game-loop-in-the-frontend-grid-based-playfield-where-the-snake-moves-continuously-and-player-inputs-apply-directional-impulse-turning-rather-than-requiring-a-keypress-every-step",
+      "title": "Implement an impulse-style Snake game loop in the frontend (grid-based playfield) where the snake moves continuously and player inputs apply directional impulse/turning rather than requiring a keypress every step.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-keyboard-controls-w-up-a-left-s-down-d-right-and-space-bar-starts-a-new-game-from-the-start-screen",
+      "title": "Add keyboard controls: W = up, A = left, S = down, D = right, and Space bar starts a new game from the start screen.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-start-screen-that-clearly-shows-the-controls-w-a-s-d-space-to-start-for-new-players-before-gameplay-begins",
+      "title": "Create a start screen that clearly shows the controls (W/A/S/D + Space to start) for new players before gameplay begins.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-provide-in-game-hud-and-end-of-game-flow-show-score-while-playing-and-on-game-over-show-final-score-and-allow-starting-a-new-game-with-space",
+      "title": "Provide in-game HUD and end-of-game flow: show score while playing, and on game over show final score and allow starting a new game with Space.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-simple-optional-new-player-name-entry-on-the-start-screen-english-ui-and-display-the-player-name-alongside-the-score-during-gameplay",
+      "title": "Add a simple optional 'New Player' name entry on the start screen (English UI) and display the player name alongside the score during gameplay.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-coherent-visual-theme-across-the-game-ui-start-screen-hud-game-over-screen-playfield-with-consistent-typography-spacing-and-colors-avoid-a-blue-purple-primary-palette-unless-required",
+      "title": "Apply a coherent visual theme across the game UI (start screen, HUD, game-over screen, playfield) with consistent typography, spacing, and colors (avoid a blue/purple primary palette unless required).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-increase-the-gameplay-play-screen-size-so-the-snake-playfield-canvas-is-noticeably-larger-and-responsive-across-desktop-and-mobile-avoiding-a-small-centered-game-area",
+      "title": "Increase the gameplay (play) screen size so the Snake playfield/canvas is noticeably larger and responsive across desktop and mobile, avoiding a small centered game area.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-gameplay-screen-layout-so-the-playfield-uses-the-available-game-area-with-no-unnecessary-blank-padding-margins-around-it-especially-on-the-play-screen",
+      "title": "Update the gameplay screen layout so the playfield uses the available game area with no unnecessary blank padding/margins around it (especially on the play screen).",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-any-remaining-unavoidable-unused-area-around-the-square-playfield-due-to-non-square-screens-visually-uses-the-same-graph-grid-styling-instead-of-appearing-as-plain-blank-background",
+      "title": "Ensure any remaining unavoidable unused area around the square playfield (due to non-square screens) visually uses the same graph/grid styling instead of appearing as plain blank background.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-snake-self-collision-logic-so-moving-into-the-cell-vacated-by-the-tail-on-the-same-tick-does-not-incorrectly-trigger-game-over-i-e-when-the-snake-is-not-eating-food-that-step",
+      "title": "Fix Snake self-collision logic so moving into the cell vacated by the tail on the same tick does not incorrectly trigger game over (i.e., when the snake is not eating food that step).",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-canvas-rendering-scaling-so-drawing-remains-crisp-and-does-not-visually-distort-over-time-during-re-renders-e-g-prevent-cumulative-2d-context-scaling-when-devicepixelratio-and-canvassize-updates-occur",
+      "title": "Fix canvas rendering scaling so drawing remains crisp and does not visually distort over time during re-renders (e.g., prevent cumulative 2D context scaling when devicePixelRatio and canvasSize updates occur).",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-gameplay-loop-lifecycle-to-avoid-orphaned-animation-frames-across-state-transitions-start-game-game-over-restart-and-ensure-only-one-active-loop-is-running-while-playing",
+      "title": "Fix gameplay loop lifecycle to avoid orphaned animation frames across state transitions (start game, game over, restart) and ensure only one active loop is running while playing.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-layout-positioning-bugs-in-the-gameplay-view-so-hud-and-overlays-are-consistently-positioned-relative-to-the-game-surface-across-screen-sizes-and-do-not-drift-overlap-unpredictably",
+      "title": "Fix layout/positioning bugs in the gameplay view so HUD and overlays are consistently positioned relative to the game surface across screen sizes and do not drift/overlap unpredictably.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-in-game-scoreboard-hud-at-the-top-of-the-gameplay-screen-so-it-renders-reliably-at-the-upper-side-during-gameplay-and-does-not-clip-drift-overlap-the-playfield-unexpectedly-or-disappear-across-common-screen-sizes-mobile-tablet-desktop",
+      "title": "Fix the in-game scoreboard/HUD at the top of the gameplay screen so it renders reliably at the upper side during gameplay and does not clip, drift, overlap the playfield unexpectedly, or disappear across common screen sizes (mobile, tablet, desktop).",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-player-name-input-so-users-can-type-normally-including-the-letters-w-a-s-and-d-and-using-arrow-keys-without-the-global-game-keyboard-handler-preventing-those-keystrokes-while-the-text-input-is-focused-or-while-the-user-is-editing-text",
+      "title": "Fix the Player Name input so users can type normally (including the letters W, A, S, and D and using arrow keys) without the global game keyboard handler preventing those keystrokes while the text input is focused or while the user is editing text.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-prevent-the-space-to-start-keyboard-shortcut-from-triggering-while-the-player-name-input-or-any-text-editing-element-is-focused-so-pressing-space-while-typing-does-not-start-restart-the-game",
+      "title": "Prevent the Space-to-start keyboard shortcut from triggering while the Player Name input (or any text-editing element) is focused, so pressing Space while typing does not start/restart the game.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-player-name-input-on-the-start-screen-so-users-can-type-normally-and-all-characters-are-accepted-specifically-including-x-c-v-b-n-and-m-without-any-global-game-keyboard-handler-interfering-while-the-input-is-focused",
+      "title": "Fix the Player Name input on the start screen so users can type normally and all characters are accepted (specifically including X, C, V, B, N, and M), without any global game keyboard handler interfering while the input is focused.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create an impulse-style Snake game with WASD controls and Space to start, including a start screen that shows controls for new players.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Make the gameplay/play screen larger (improve sizing/responsiveness so it’s not too small).",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "2d",
+  "projectName": "Impulse Snake",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

@@ -1,0 +1,11 @@
+{
+  "frontend/src/index.css": "Global styles with vibrant green/amber OKLCH color theme, dedicated HUD container utility with safe spacing, and responsive playfield sizing that accounts for HUD space to prevent overlap.",
+  "frontend/tailwind.config.js": "Tailwind configuration with custom green/amber color palette, Inter/JetBrains Mono fonts, custom border radii, glow shadows, and pulse animation for game UI.",
+  "frontend/src/App.tsx": "Root application component that renders the SnakeGamePage as the main view.",
+  "frontend/src/game/useImpulseSnake.ts": "Custom React hook implementing impulse-style Snake game logic with fixed self-collision detection (allows moving into vacating tail cell), single-instance animation loop lifecycle with guard flags, and proper cleanup to prevent multiple concurrent loops.",
+  "frontend/src/game/SnakeCanvas.tsx": "Responsive canvas renderer that uses ResizeObserver to measure container size, dynamically calculates cell size, and renders the Snake game with crisp high-DPI graphics using ctx.setTransform to reset cumulative scaling on each draw.",
+  "frontend/src/components/ControlLegend.tsx": "Reusable UI component displaying game controls (W/A/S/D for movement, Space to start) with keyboard icons and visual styling.",
+  "frontend/src/components/HudBar.tsx": "In-game heads-up display component with fixed minimum height and stable layout that prevents reflow when playerName is present or absent, showing player name and current score with trophy icon.",
+  "frontend/src/pages/SnakeGamePage.tsx": "Main game page with hardened keyboard handling that checks both event target and active element for text-editing context, returns early before preventDefault when typing in input fields, and adds stopPropagation on the Player Name input to ensure all characters (including XCVBNM) can be typed without game control interference.",
+  "frontend/src/utils/isTextEditingElement.ts": "Utility function that detects whether the currently focused element is a text-editing element (input, textarea, or contentEditable) where normal keyboard input should work without game control interference."
+}

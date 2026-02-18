@@ -1,0 +1,48 @@
+{
+  "kind": "build_request",
+  "title": "Fix player name input to accept all letters (including X/C/V/B/N/M)",
+  "projectName": "Impulse Snake",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-17",
+      "text": "Fix the Player Name input on the start screen so users can type normally and all characters are accepted (specifically including X, C, V, B, N, and M), without any global game keyboard handler interfering while the input is focused.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "In nameSpelling  is not use, XCVBNM, please fix \nit"
+        ]
+      },
+      "acceptanceCriteria": [
+        "On the start screen, click into the Player Name input and type \"XCVBNM\"; the input value shows exactly \"XCVBNM\".",
+        "While the Player Name input is focused, typing any letters does not start/restart the game and does not move the snake (no game keyboard actions fire).",
+        "When the Player Name input is NOT focused, existing game keyboard controls (W/A/S/D, Arrow keys, Space) continue to work as before."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit files under frontend/src/components/ui (read-only).",
+    "Backend remains single-actor; no backend changes are required for this fix."
+  ],
+  "nonGoals": [
+    "Adding new authentication, profiles, or persistence for player names.",
+    "Changing gameplay rules, snake speed, scoring, or collision behavior beyond what is needed to fix name typing."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

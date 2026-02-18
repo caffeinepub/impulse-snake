@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.5rem;
+        /* Vibrant green/amber theme for Snake game */
+        --background: 0.98 0 0;
+        --foreground: 0.15 0 0;
+        --card: 0.96 0 0;
+        --card-foreground: 0.15 0 0;
+        --popover: 0.98 0 0;
+        --popover-foreground: 0.15 0 0;
+        /* Primary: Rich green */
+        --primary: 0.55 0.18 145;
+        --primary-foreground: 0.98 0 0;
+        /* Secondary: Warm amber */
+        --secondary: 0.75 0.15 75;
+        --secondary-foreground: 0.15 0 0;
+        --muted: 0.94 0 0;
+        --muted-foreground: 0.50 0 0;
+        /* Accent: Bright lime */
+        --accent: 0.70 0.20 130;
+        --accent-foreground: 0.15 0 0;
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.98 0 0;
+        --border: 0.88 0 0;
+        --input: 0.88 0 0;
+        --ring: 0.55 0.18 145;
+    }
+
+    .dark {
+        --background: 0.12 0 0;
+        --foreground: 0.95 0 0;
+        --card: 0.18 0 0;
+        --card-foreground: 0.95 0 0;
+        --popover: 0.15 0 0;
+        --popover-foreground: 0.95 0 0;
+        /* Primary: Bright green */
+        --primary: 0.65 0.20 145;
+        --primary-foreground: 0.12 0 0;
+        /* Secondary: Golden amber */
+        --secondary: 0.70 0.18 75;
+        --secondary-foreground: 0.12 0 0;
+        --muted: 0.22 0 0;
+        --muted-foreground: 0.65 0 0;
+        /* Accent: Electric lime */
+        --accent: 0.75 0.22 130;
+        --accent-foreground: 0.12 0 0;
+        --destructive: 0.60 0.24 25;
+        --destructive-foreground: 0.95 0 0;
+        --border: 0.25 0 0;
+        --input: 0.25 0 0;
+        --ring: 0.65 0.20 145;
+    }
+
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+}
+
+@layer utilities {
+    /* Subtle grid background for gameplay surface */
+    .game-grid-bg {
+        background-color: oklch(var(--background));
+        background-image: 
+            linear-gradient(to right, oklch(var(--border) / 0.15) 1px, transparent 1px),
+            linear-gradient(to bottom, oklch(var(--border) / 0.15) 1px, transparent 1px);
+        background-size: 24px 24px;
+    }
+
+    /* HUD container - fixed at top with safe spacing */
+    .game-hud-container {
+        padding: 1rem 0;
+        flex-shrink: 0;
+        z-index: 10;
+    }
+
+    /* Responsive square playfield container - adjusted for HUD space */
+    .game-playfield-container {
+        width: 100%;
+        max-width: min(95vw, 95vh, 600px);
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    .game-playfield-wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Tablet and up: larger playfield */
+    @media (min-width: 768px) {
+        .game-playfield-container {
+            max-width: min(90vw, 90vh, 700px);
+        }
+    }
+
+    /* Desktop: maximize playfield */
+    @media (min-width: 1024px) {
+        .game-playfield-container {
+            max-width: min(85vw, 85vh, 800px);
+        }
+    }
+
+    /* Extra large screens: full utilization */
+    @media (min-width: 1536px) {
+        .game-playfield-container {
+            max-width: min(80vw, 80vh, 900px);
+        }
+    }
+}
