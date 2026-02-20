@@ -10,7 +10,7 @@ interface SnakeCanvasProps {
 export function SnakeCanvas({ gameState, gridSize }: SnakeCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [canvasSize, setCanvasSize] = useState(600); // Default larger size
+  const [canvasSize, setCanvasSize] = useState(800); // Increased default size
 
   // Measure container and set responsive canvas size
   useEffect(() => {

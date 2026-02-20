@@ -2,10 +2,11 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-fix-the-player-name-input-on-the-start-screen-so-users-can-type-normally-and-all-characters-are-accepted-specifically-including-x-c-v-b-n-and-m-without-any-global-game-keyboard-handler-interfering-while-the-input-is-focused",
-      "featureTitle": "Fix the Player Name input on the start screen so users can type normally and all characters are accepted (specifically including X, C, V, B, N, and M), without any global game keyboard handler interfering while the input is focused.",
+      "featureId": "feature-increase-the-snake-game-playfield-canvas-size-significantly-so-it-occupies-more-screen-space-and-is-noticeably-larger-than-the-current-small-centered-display-making-the-gameplay-area-more-prominent-and-comfortable-to-play-on-desktop-and-mobile-devices",
+      "featureTitle": "Increase the Snake game playfield canvas size significantly so it occupies more screen space and is noticeably larger than the current small centered display, making the gameplay area more prominent and comfortable to play on desktop and mobile devices.",
       "files": [
-        "frontend/src/pages/SnakeGamePage.tsx"
+        "frontend/src/game/SnakeCanvas.tsx",
+        "frontend/src/index.css"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -15,7 +16,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-17"
+        "REQ-20"
       ],
       "confidence": "high"
     }

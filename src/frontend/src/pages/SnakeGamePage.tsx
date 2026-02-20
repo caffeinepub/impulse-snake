@@ -4,6 +4,7 @@ import { SnakeCanvas } from '../game/SnakeCanvas';
 import { ControlLegend } from '../components/ControlLegend';
 import { HudBar } from '../components/HudBar';
 import { SiX, SiGithub } from 'react-icons/si';
+import { Trophy } from 'lucide-react';
 import { isTextEditingElement } from '../utils/isTextEditingElement';
 
 export default function SnakeGamePage() {
@@ -178,11 +179,11 @@ export default function SnakeGamePage() {
 
                 {/* Game Over Overlay - Centered on playfield */}
                 {gameState.status === 'gameOver' && (
-                  <div className="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
-                    <div className="w-full max-w-md pointer-events-auto">
-                      <div className="bg-card/95 backdrop-blur-sm border border-border rounded-lg p-8 shadow-lg space-y-6">
-                        <div className="text-center space-y-2">
-                          <h2 className="text-3xl font-bold text-destructive">Game Over!</h2>
+                  <div className="absolute inset-0 flex items-center justify-center p-4 bg-background/80 backdrop-blur-sm z-50">
+                    <div className="w-full max-w-md">
+                      <div className="bg-card border-2 border-primary rounded-xl p-8 shadow-2xl shadow-primary/20 space-y-6">
+                        <div className="text-center space-y-3">
+                          <h2 className="text-4xl font-bold text-destructive">Game Over!</h2>
                           {playerName && (
                             <p className="text-lg text-muted-foreground">
                               Nice try, <span className="text-foreground font-semibold">{playerName}</span>!
@@ -190,12 +191,17 @@ export default function SnakeGamePage() {
                           )}
                         </div>
 
-                        <div className="text-center">
-                          <p className="text-sm text-muted-foreground mb-2">Final Score</p>
-                          <p className="text-5xl font-bold text-primary tabular-nums">{gameState.score}</p>
+                        <div className="bg-primary/10 border border-primary/30 rounded-lg p-6 text-center space-y-2">
+                          <div className="flex items-center justify-center gap-2 text-primary">
+                            <Trophy className="w-6 h-6" />
+                            <p className="text-sm font-semibold uppercase tracking-wide">Final Score</p>
+                          </div>
+                          <p className="text-6xl font-bold text-primary tabular-nums tracking-tight">
+                            {gameState.score}
+                          </p>
                         </div>
 
-                        <div className="text-center pt-4">
+                        <div className="text-center pt-2">
                           <p className="text-sm text-muted-foreground animate-pulse-glow">
                             Press <kbd className="px-2 py-1 bg-primary text-primary-foreground rounded font-mono text-xs font-semibold">SPACE</kbd> to play again
                           </p>

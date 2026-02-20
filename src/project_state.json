@@ -1,13 +1,13 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 15,
+  "projectStateVersion": 21,
   "summary": "Build a simple impulse-style Snake web game with WASD movement, Space to start, and a start screen showing controls for new players.",
   "architectural_notes": [],
   "known_issues": [
-    "Gameplay/play screen appears too small; needs larger/responsive sizing.",
     "Scoreboard/HUD at the upper side has a bug (positioning/display issue); needs fixing.",
     "Player name entry/display has an issue: typing/spelling/editing the name is not working correctly.",
-    "Player name input/spelling does not accept certain letters (e.g., X/C/V/B/N/M); needs fixing so all characters can be typed normally."
+    "Player name input/spelling does not accept certain letters (e.g., X/C/V/B/N/M); needs fixing so all characters can be typed normally.",
+    "Game-over screen does not display the player's final score; must be fixed."
   ],
   "isFixRequest": true,
   "existing_features": [
@@ -146,6 +146,22 @@
         "REQ-17"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-fix-the-game-over-screen-to-display-the-player-s-final-score-prominently-when-the-game-ends-ensuring-the-score-is-visible-and-clearly-labeled-on-the-end-game-view",
+      "title": "Fix the game-over screen to display the player's final score prominently when the game ends, ensuring the score is visible and clearly labeled on the end-game view.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-increase-the-snake-game-playfield-canvas-size-significantly-so-it-occupies-more-screen-space-and-is-noticeably-larger-than-the-current-small-centered-display-making-the-gameplay-area-more-prominent-and-comfortable-to-play-on-desktop-and-mobile-devices",
+      "title": "Increase the Snake game playfield canvas size significantly so it occupies more screen space and is noticeably larger than the current small centered display, making the gameplay area more prominent and comfortable to play on desktop and mobile devices.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -156,9 +172,17 @@
       "status": "pending"
     },
     {
-      "id": "AR-2",
-      "summary": "Make the gameplay/play screen larger (improve sizing/responsiveness so it’s not too small).",
+      "id": "AR-3",
+      "summary": "Show the player's final score on the game-over/end screen.",
       "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Display the player's final score prominently on the game-over screen when the game ends",
+      "reqIds": [
+        "REQ-18"
+      ],
       "status": "pending"
     }
   ],

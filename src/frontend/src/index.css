@@ -81,10 +81,10 @@
         z-index: 10;
     }
 
-    /* Responsive square playfield container - adjusted for HUD space */
+    /* Responsive square playfield container - significantly larger for prominent gameplay */
     .game-playfield-container {
         width: 100%;
-        max-width: min(95vw, 95vh, 600px);
+        max-width: min(95vw, 95vh, 700px);
         aspect-ratio: 1;
         display: flex;
         align-items: center;
@@ -101,24 +101,24 @@
         justify-content: center;
     }
 
-    /* Tablet and up: larger playfield */
+    /* Tablet and up: much larger playfield */
     @media (min-width: 768px) {
         .game-playfield-container {
-            max-width: min(90vw, 90vh, 700px);
+            max-width: min(90vw, 90vh, 900px);
         }
     }
 
-    /* Desktop: maximize playfield */
+    /* Desktop: maximize playfield for prominent display */
     @media (min-width: 1024px) {
         .game-playfield-container {
-            max-width: min(85vw, 85vh, 800px);
+            max-width: min(85vw, 85vh, 1100px);
         }
     }
 
-    /* Extra large screens: full utilization */
+    /* Extra large screens: full utilization with very large canvas */
     @media (min-width: 1536px) {
         .game-playfield-container {
-            max-width: min(80vw, 80vh, 900px);
+            max-width: min(80vw, 80vh, 1300px);
         }
     }
 }

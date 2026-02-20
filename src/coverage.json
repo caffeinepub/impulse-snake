@@ -1,7 +1,7 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-18T12:15:43.878Z",
+  "generatedAt": "2026-02-20T11:03:05.670Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
@@ -11,15 +11,17 @@
     "implemented": 1,
     "items": [
       {
-        "id": "REQ-17",
-        "summary": "Fix the Player Name input on the start screen so users can type normally and all characters are accepted (specifically including X, C, V, B, N, and M), without any global game keyboard handler interfering while the input is focused.",
+        "id": "REQ-20",
+        "summary": "Increase the Snake game playfield canvas size significantly so it occupies more screen space and is noticeably larger than the current small centered display, making the gameplay area more prominent and comfortable to play on desktop and mobile devices.",
         "status": "implemented",
         "plannedFiles": [
+          "frontend/src/index.css",
           "frontend/src/pages/SnakeGamePage.tsx",
-          "frontend/src/utils/isTextEditingElement.ts"
+          "frontend/src/game/SnakeCanvas.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/pages/SnakeGamePage.tsx"
+          "frontend/src/index.css",
+          "frontend/src/game/SnakeCanvas.tsx"
         ]
       }
     ]
@@ -29,7 +31,8 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/pages/SnakeGamePage.tsx",
+    "frontend/src/game/SnakeCanvas.tsx",
+    "frontend/src/index.css",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

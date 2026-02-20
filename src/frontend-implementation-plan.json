@@ -1,26 +1,32 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Impulse Snake — fix Player Name typing vs global keyboard controls",
+  "title": "Increase gameplay screen size for larger playfield display",
   "requirements": [
     {
-      "id": "REQ-17",
-      "summary": "Ensure Player Name input accepts all characters while focused by preventing the global game key handler from intercepting keystrokes, while preserving game controls when not focused.",
+      "id": "REQ-20",
+      "summary": "Increase the Snake game playfield canvas size to occupy more screen space and provide a more prominent, comfortable gameplay area",
       "acceptanceCriteria": [
-        "On the start screen, click into the Player Name input and type \"XCVBNM\"; the input value shows exactly \"XCVBNM\".",
-        "While the Player Name input is focused, typing any letters does not start/restart the game and does not move the snake (no game keyboard actions fire).",
-        "When the Player Name input is NOT focused, existing game keyboard controls (W/A/S/D, Arrow keys, Space) continue to work as before."
+        "The playfield canvas renders significantly larger than the current small size",
+        "The gameplay area is prominent and comfortable to view on desktop screens",
+        "The canvas remains responsive and appropriately sized on mobile devices",
+        "The larger canvas does not cause layout issues with the HUD or control legend"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/pages/SnakeGamePage.tsx",
+          "path": "frontend/src/index.css",
           "operation": "modify",
-          "description": "Harden keyboard handling so the global window keydown logic never interferes with typing: (1) treat events as text-editing when either the event target or the active element is a text-editing element, and return early; (2) add an input-level keydown handler (capture phase) that stops propagation while the Player Name field is focused so keys like X/C/V/B/N/M cannot be consumed by the game handler; (3) keep existing behavior for Space/WASD/Arrow keys when the input is not focused. Ensure no files under frontend/src/components/ui are edited."
+          "description": "Increase the CSS custom properties and utility classes that define the playfield sizing to make the canvas significantly larger. Update max-width and height constraints for .playfield-container or equivalent sizing utilities to occupy more viewport space while maintaining the square aspect ratio and responsive behavior across screen sizes."
         },
         {
-          "path": "frontend/src/utils/isTextEditingElement.ts",
+          "path": "frontend/src/pages/SnakeGamePage.tsx",
           "operation": "modify",
-          "description": "Extend/adjust the text-editing detection utility (if needed) to reliably identify editable contexts based on the received element (e.g., handle cases where the event target is within an editable container) so SnakeGamePage can accurately bypass game key handling during typing."
+          "description": "Adjust the layout container or wrapper sizing for the game canvas to accommodate the larger playfield dimensions. Ensure the HUD and control legend remain properly positioned and do not overlap or conflict with the expanded canvas area."
+        },
+        {
+          "path": "frontend/src/game/SnakeCanvas.tsx",
+          "operation": "modify",
+          "description": "Review and adjust canvas sizing logic if needed to ensure the ResizeObserver and rendering behavior properly handle the larger dimensions. Verify that high-DPI rendering scales correctly with the increased canvas size and that the grid, food, and snake body render properly at the new scale."
         }
       ]
     }
